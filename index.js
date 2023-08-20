@@ -149,8 +149,7 @@ console.log(CemberinAlani(15));
 		tekraredensayilar=[]
 		for (const key in n) {
 			if (n[key] > 1) {
-				console.log(`${key} sayisi ${n[key]} kere tekrarlamistir`);
-				tekraredensayilar.push(key)
+				tekraredensayilar.push(`${key} sayısı ${n[key]} kere tekrar edilmiştir`)
 			}
 		}
 	}
