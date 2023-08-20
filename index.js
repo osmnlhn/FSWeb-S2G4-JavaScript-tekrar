@@ -146,13 +146,16 @@ console.log(CemberinAlani(15));
 			}
 		}
 		// console.log(n);
+		tekraredensayilar=[]
 		for (const key in n) {
 			if (n[key] > 1) {
 				console.log(`${key} sayisi ${n[key]} kere tekrarlamistir`);
+				tekraredensayilar.push(key)
 			}
 		}
 	}
 	tekrarlariBul(sayilar)
+	console.log(tekraredensayilar)
 
 
 
