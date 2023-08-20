@@ -16,6 +16,7 @@ var sayilar = [45,856,12.5,63,0.02,154,2,54,78,61.7,654,26,12.5,63,969,152,32,31
 function KareninAlani(kenaruzunlugu){
 	return kenaruzunlugu*kenaruzunlugu;
 }
+console.log(KareninAlani(10));
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -29,10 +30,11 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(yaricap){
+	let cember=2*pi*yaricap;
+	return cember
 }
-
+console.log(CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -47,10 +49,13 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
-}
+function CemberinAlani(yaricap){
+	let alan=pi*Math.pow(yaricap,2)
 
+	return alan;
+	
+}
+console.log(CemberinAlani(15));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -77,37 +82,77 @@ function CemberinAlani(/* kodlar buraya */){
 	
 	//3a çözümü
 
-	/* kodlar buraya */
+		
+		// for (let index = 0; index < sayilar.length; index++) {
+		// 	if (sayilar[index] < enkucuk) {
+		// 		enkucuk = sayilar[index]
+		// 	} else{
+		// 		enbuyuk = sayilar[index]
+		// 	}
+			
+		// }
+		
+		enkucuk = Math.min(...sayilar)
+		enbuyuk = Math.max(...sayilar)
 	
+	
+	console.log('en kucuk deger', enkucuk);
+	console.log('en buyuk deger', enbuyuk);
 	
 	
 	// 3b çözümü:
 
-	/* kodlar buraya */
-		
-		
+
+	
+	ucetambolunenler = []
+	sayilar.forEach(element=> {
+		if (element%3===0) {
+			ucetambolunenler.push(element)
+		}
+	});
+		console.log(ucetambolunenler);
 		
 	//3c çözümü:
 	
-	/* kodlar buraya */
+	
+
+	ucebolunenlerintoplami=ucetambolunenler.reduce((a,b)=>a+b)
+
+	console.log(ucebolunenlerintoplami);
 
 	
 	
 	//3d çözümü
+	 besyuzdenkucuksayilar=[]
 	
-	/* kodlar buraya */
-
-
+	 besyuzdenkucuksayilar=sayilar.filter(x=> x< 500)
 
 	//3e çözümü
 
-	/* kodlar buraya */
 	
-	
-	//3f çözümü
-	
-	/* kodlar buraya */
 
+ siralisayilar=besyuzdenkucuksayilar.sort(function(a, b){return a - b})
+
+	//3f çözümü
+
+	let n = {};
+	function tekrarlariBul(array) {
+		for (let i = 0; i < array.length; i++) {
+
+			if (n[array[i]]) {
+				n[array[i]] += 1
+			} else {
+				n[array[i]] = 1
+			}
+		}
+		// console.log(n);
+		for (const key in n) {
+			if (n[key] > 1) {
+				console.log(`${key} sayisi ${n[key]} kere tekrarlamistir`);
+			}
+		}
+	}
+	tekrarlariBul(sayilar)
 
 
 
